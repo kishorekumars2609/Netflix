@@ -23,7 +23,7 @@ const Movie = ({ item }) => {
         }),
       });
     } else {
-      alert('Please log in to save a movie');
+      alert('please log in to save a movie');
     }
   };
 

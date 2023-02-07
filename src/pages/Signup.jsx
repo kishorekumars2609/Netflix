@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserAuth } from '../context/AuthContext';
+import { setDoc, doc } from "firebase/firestore";
+import { auth, db } from "../firebase";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -12,7 +14,10 @@ const Signup = () => {
     e.preventDefault();
     try {
       await signUp(email, password);
+      await setDoc(doc(db,"users",email),
+     { savedshows: []})
       navigate('/')
+
     } catch (error) {
       console.log(error);
     }

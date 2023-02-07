@@ -12,7 +12,7 @@ function Home() {
     <Row rowId='4' title='Trending'fetchURL={requests.requestTrending}/>
     <Row rowId='5' title='Action'fetchURL={requests.requestAction}/>
 
-    {/* <Row title='Latest'fetchURL={requests.requestLatest}/> */}
+    {/* <Row rowId ='6' title='Latest'fetchURL={requests.requestLatest}/> */}
 
 
     </>
