@@ -3,7 +3,7 @@ import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import { UserAuth } from '../context/AuthContext';
 import { db } from '../firebase';
 import { updateDoc, doc, onSnapshot } from 'firebase/firestore';
-import { AiOutlineClose } from 'react-icons/ai';
+import { AiOutlineClose , AiOutlineCaretRight } from 'react-icons/ai';
 
 const SavedShows = () => {
   const [movies, setMovies] = useState([]);
@@ -17,6 +17,10 @@ const SavedShows = () => {
     var slider = document.getElementById('slider');
     slider.scrollLeft = slider.scrollLeft + 500;
   };
+
+//   const API_KEY = 'AIzaSyD8_8TwnY0YMBEPVZ-8OiOdSTRW7ANnaSsY';
+// const SEARCH_URL = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=`;
+
 
   useEffect(() => {
     onSnapshot(doc(db, 'users', `${user?.email}`), (doc) => {
@@ -35,6 +39,10 @@ const SavedShows = () => {
           console.log(error)
       }
   }
+
+
+
+  
 
   return (
     <>
@@ -64,6 +72,7 @@ const SavedShows = () => {
                   {item?.title}
                 </p>
                 <p onClick={()=> deleteShow(item.id)} className='absolute text-gray-300 top-4 right-4'><AiOutlineClose /></p>
+                <p   className='absolute text-gray-300 top-4 left-4  '><AiOutlineCaretRight/></p>
               </div>
             </div>
           ))}

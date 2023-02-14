@@ -20,7 +20,7 @@ const Navbar = () => {
     <div className='flex items-center justify-between p-4 z-[100] w-full absolute'>
       <Link to='/'>
         <h1 className='text-red-600 text-4xl font-bold cursor-pointer'>
-          NETFLIX
+          WATCHOO
         </h1>
       </Link>
       {user?.email ? (
@@ -34,6 +34,11 @@ const Navbar = () => {
           >
             Logout
           </button>
+          <Link to='/subscribe'>
+            <button className='px-4 py-2 rounded cursor-pointer text-white'>
+              Subscribe
+            </button>
+          </Link>
         </div>
       ) : (
         <div>
@@ -45,6 +50,7 @@ const Navbar = () => {
               Sign Up
             </button>
           </Link>
+          
         </div>
       )}
     </div>

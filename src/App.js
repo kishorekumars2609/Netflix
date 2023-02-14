@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Footer from "./components/Footer"
+import Subscription from "./pages/Subscription";
 
 function App() {
   return (
@@ -26,8 +27,8 @@ function App() {
               </ProtectedRoute>
             }
           />
+          <Route path="/subscribe" element={<Subscription/>}/>
         </Routes>
-        <Footer/>
       </AuthContextProvider>
     </>
   );
