@@ -37,6 +37,7 @@ const SavedShows = () => {
         })
       } catch (error) {
           console.log(error)
+          window.alert(error)
       }
   }
 

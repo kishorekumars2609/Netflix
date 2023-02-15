@@ -6,9 +6,9 @@ import { AiOutlineGithub, AiFillInstagram } from 'react-icons/ai';
 function Footer() {
   return (
    
-    <div className="main-footer ">
-      <div className="container">
-        <div className="grid grid-cols-3 gap-4  ">
+    <div className="main-footer  ">
+      <div className="container   ">
+        <div className="grid grid-cols-3 gap-4 py-2 bg-gray-800 ">
           {/* Column1 */}
           <div className="col text-center ">
             <h4 className="text-white">Reach Us</h4>
@@ -36,11 +36,10 @@ function Footer() {
 
         </div>
         <hr />
-        <br/>
 
-        <div className="row">
+        <div className="py-2 row bg-gray-800">
           <p className="col-sm text-white text-center">
-            Kishore kumar | Terms Of Service | Privacy {/* &copy;{new Date().getFullYear()} */}
+           @ Kishore kumar | Terms Of Service | Privacy {/* &copy;{new Date().getFullYear()} */}
           </p>
         </div>
       </div>

@@ -3,23 +3,28 @@ import React, { useEffect, useState } from 'react'
 import requests from '../Requests'
 import Modal from './Modal';
 
-function Main() {
+function Main() { 
+
   const [openModal, setOpenModal] = useState(false);
 
    const [movies,setMovies] = useState([])
+   const [yt, setYT] = useState(null);
 
-
-  
-   
-     //const SEARCH_URL = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=`;
+    //const[movie,setMovie] =useState(axios.get(requests.requestAction))
+  var no =1
+    
+     const SEARCH_URL = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=`;
 
    useEffect(()=>{
     axios.get(requests.requestPopular).then((response)=>{
         setMovies(response.data.results);
+         no=[Math.floor(Math.random()*10)]
+         console.log(no)
+         movie = movies[no]
     });
    },[]);
 
-   const movie = movies[Math.floor(Math.random()* movies.length)]
+   let movie = movies[no]
    console.log(movie)
 
   //   async function fetchYoutubeLink(title) {
@@ -62,6 +67,7 @@ function Main() {
                 <button  onClick={() => setOpenModal(true)} 
       className='border modalButton bg-gray-300 text-black border-gray-300 py-2 px-5'>play</button>
                 <Modal 
+                movie={movie}
           open={openModal} 
         onClose={() => setOpenModal(false)} />
                 <button className='border text-white border-gray-300 py-2 px-5 ml-4 '>Watch Later</button>
