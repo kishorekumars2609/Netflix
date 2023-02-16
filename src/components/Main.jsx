@@ -7,15 +7,10 @@ import { db } from "../firebase";
 import { arrayUnion, doc, updateDoc } from "firebase/firestore";
 
 
-
-
 function Main() { 
   const [like, setLike] = useState(false);
 
-  const [saved, setSaved] = useState(false);
-
-  const [openModal, setOpenModal] = useState(false);
-
+   const [saved, setSaved] = useState(false);
    const [movies,setMovies] = useState([])
    const [yt, setYT] = useState(null);
    const { user } = UserAuth();
@@ -55,6 +50,7 @@ function Main() {
       alert("please log in to save a movie");
     }
   };
+  //   const [yt, setYT] = useState(null);
 
   //   async function fetchYoutubeLink(title) {
   //   const response = await fetch(
@@ -100,11 +96,7 @@ function Main() {
               </div>
               <p className='text-gray-400 text-sm'>Released: {movie?.release_date}</p>
               <p className='w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-gray-200'>{truncateString (movie?.overview,170)}</p>
-             </div>
-             
-             
-        
-        
+             </div>   
         </div>
     </div>
   )
