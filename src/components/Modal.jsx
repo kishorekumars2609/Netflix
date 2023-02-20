@@ -3,23 +3,33 @@ import { CiYoutube } from "react-icons/ci";
 import { BsPlayCircle } from "react-icons/bs";
 import { UserAuth } from "../context/AuthContext";
 
+import MovieList from "./MovieList";
 
-export default function Modal() {
+
+export default function Modal( movie_id) {
   const [showModal, setShowModal] = React.useState(false);
   const { user } = UserAuth();
-  // const[userin,setUserin]=useState(false)
+   //const similar=movie_id;
 
+   const[showSuggest,setShowSuggest]=React.useState(false)
+  //  const similarurl=`
+  //  https://api.themoviedb.org/3/movie/${similar}/similar?api_key='5234fd398d16a8d13e43481d9314d6f9'&language=en-US&page=1`
+   
+
+   
  
     function userin(){
       if(user?.email){
         setShowModal(true)
-      }
+        console.log(movie_id.movie_id)
+             }
       else{
         alert("login to watch")
+       
       }
     }
   
-  
+ 
   return (
     <> 
       
@@ -33,14 +43,11 @@ export default function Modal() {
     
       {showModal ?  (
         <>
-          <div className=" backdrop-invert-0 bg-white/60    justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-            <div className=" name0 relative h-[400px] w-auto my-6 mx-auto max-w-3xl">
+          <div className=" backdrop-invert-0 bg-white/70    justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+            
+            <div className=" modal-start name0 relative h-[400px] w-auto my-6 mx-auto max-w-3xl justify-center items-center ">
               <div className=" name1 h-full w-[500px] border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-zinc-400 outline-none focus:outline-none">
-                {/*header*/}
-                {/* <div className=" flex items-start justify-between p-1 border-b border-solid border-slate-200 rounded-t">
-                  <h3 className="text-black text-xl font-semibold">Modal Title</h3>
-                </div> */}
-                {/*body*/}
+               
                 <div className="relative h-[250px] p-2 flex-auto">
                   <iframe
                     width={465}
@@ -64,15 +71,26 @@ export default function Modal() {
                   <button
                     className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
-                    onClick={() => setShowModal(false)}
+                    onClick={() => setShowSuggest(true)}
                   >
-                    Save Changes
+                    Suggest More
                   </button>
                 </div>
               </div>
+             
+              <div>
+
+              {showSuggest ?(<MovieList  movie_no={movie_id.movie_id} />):null}
+              </div>
+              
+
+              
+              {/* <Row rowId='6' title='Recommended'fetchURL={requests.similarurl}/> */}
             </div>
+            {/* <Row rowId='1' title='Recommended'fetchURL={requests.similarurl}/> */}
+
           </div>
-          <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+        
         </>
       ) : null
       }

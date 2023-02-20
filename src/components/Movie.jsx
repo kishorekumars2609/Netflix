@@ -13,6 +13,8 @@ const Movie = ({ item }) => {
   const [saved, setSaved] = useState(false);
   const { user } = UserAuth();
 
+
+
   const movieID = doc(db, "users", `${user?.email}`);
 
   const saveShow = async () => {
@@ -21,16 +23,18 @@ const Movie = ({ item }) => {
       setSaved(true);
       await updateDoc(movieID, {
         savedShows: arrayUnion({
-          id: item.id,
+          id: item.id ,
           title: item.title,
           img: item.backdrop_path,
         }),
+       
       });
     } else {
       alert("please log in to save a movie");
     }
   };
 
+  
   return (
     <div   className="h-[180px]  w-[200px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2">
       <img 
@@ -39,10 +43,6 @@ const Movie = ({ item }) => {
         src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`}
         alt={item?.title}
       />   
- 
-       
-       
-
       <div className="absolute top-0 left-0 flex flex-col w-full h-[172px] hover:bg-black/80 opacity-0 hover:opacity-100 text-white">
       
         <p className="white-space-normal text-xs md:text-sm font-bold flex justify-center items-center h-full text-center">
@@ -50,7 +50,7 @@ const Movie = ({ item }) => {
         </p>
         <div className="w-full absolute  right-2 py-2 flex justify-center">
 
-        <Modal  />
+        <Modal  movie_id={item.id}/>
        </div>
         <p onClick={saveShow}>
           {like ? (

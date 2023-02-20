@@ -15,7 +15,11 @@ const Signup = () => {
     try {
       await signUp(email, password);
       await setDoc(doc(db,"users",email),
-     { savedshows: []})
+     { savedshows: []},
+    )
+  //   await setDoc(doc(db,"users",email),
+  //   { recommend: []},
+  //  )
       navigate('/')
 
     } catch (error) {
