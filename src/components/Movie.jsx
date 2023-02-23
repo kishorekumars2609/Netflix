@@ -15,20 +15,20 @@ const Movie = ({ item }) => {
 
   const SEARCH_URL = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=`;
 
-  async function fetchYoutubeLink(title) {
-    const response = await fetch(
-      SEARCH_URL +
-        encodeURIComponent(title) +
-        "&key=" +
-        "AIzaSyBTMO9WtW6YrgMukCrTDKLx2awGthbRc1c"
-    );
-    const json = await response.json();
-    const video = json.items.find((item) => item.id.kind === "youtube#video");
-    if (!video) {
-      throw new Error("No video found with the given title.");
-    }
-    setYT(`https://www.youtube.com/embed/${video.id.videoId}`);
-  }
+  // async function fetchYoutubeLink(title) {
+  //   const response = await fetch(
+  //     SEARCH_URL +
+  //       encodeURIComponent(title) +
+  //       "&key=" +
+  //       "AIzaSyBTMO9WtW6YrgMukCrTDKLx2awGthbRc1c"
+  //   );
+  //   const json = await response.json();
+  //   const video = json.items.find((item) => item.id.kind === "youtube#video");
+  //   if (!video) {
+  //     throw new Error("No video found with the given title.");
+  //   }
+  //   setYT(`https://www.youtube.com/embed/${video.id.videoId}`);
+  // }
 
   
 
@@ -68,7 +68,9 @@ console.log(yt)
         </p>
         <div className="w-full absolute  right-2 py-2 flex justify-center">
 
-        <Modal  movie_id={item.id}  movie_link={yt} onClick={fetchYoutubeLink(item.title)}/>
+        <Modal  movie_id={item.id}  movie_link={yt}
+        //  onClick={fetchYoutubeLink(item.title)}
+         />
        </div>
         <p onClick={saveShow}>
           {like ? (
