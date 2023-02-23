@@ -6,14 +6,13 @@ import { UserAuth } from "../context/AuthContext";
 import MovieList from "./MovieList";
 
 
-export default function Modal( movie_id) {
+export default function Modal( movie_id, movie_link) {
   const [showModal, setShowModal] = React.useState(false);
   const { user } = UserAuth();
    //const similar=movie_id;
 
    const[showSuggest,setShowSuggest]=React.useState(false)
-  //  const similarurl=`
-  //  https://api.themoviedb.org/3/movie/${similar}/similar?api_key='5234fd398d16a8d13e43481d9314d6f9'&language=en-US&page=1`
+
    
 
    
