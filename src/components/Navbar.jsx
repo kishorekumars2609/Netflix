@@ -17,16 +17,28 @@ const Navbar = () => {
   };
 
   return (
-    <div className='flex items-center justify-between p-4 z-[100] w-full absolute'>
+    <div className='flex items-center justify-between p-4 z-[100] w-full absolute no-underline	'>
       <Link to='/'>
-        <h1 className='text-red-600 text-4xl font-bold cursor-pointer'>
+        <h1  className='text-red-600 text-4xl font-bold cursor-pointer no-underline	 '>
           WATCHOO
         </h1>
       </Link>
       {user?.email ? (
         <div>
           <Link to='/account'>
-            <button className='text-white pr-4'>Account</button>
+            <button className='text-white mr-2 pr-4'>Account</button>
+          </Link>
+          {/* <Link to='/movies'>
+          <button
+            className='bg-red-600 px-6 py-2 rounded cursor-pointer text-white'
+          >
+            Reviews
+          </button>
+          </Link> */}
+          <Link to='/reviews'>
+            <button className='pr-4 mr-2 border-none rounded cursor-pointer text-white'>
+              Reviews
+            </button>
           </Link>
           <button
             onClick={handleLogout}
@@ -34,11 +46,6 @@ const Navbar = () => {
           >
             Logout
           </button>
-          <Link to='/subscribe'>
-            <button className='px-4 py-2 rounded cursor-pointer text-white'>
-              Subscribe
-            </button>
-          </Link>
         </div>
       ) : (
         <div>
@@ -48,6 +55,11 @@ const Navbar = () => {
           <Link to='/signup'>
             <button className='bg-red-600 px-6 py-2 rounded cursor-pointer text-white'>
               Sign Up
+            </button>
+          </Link>
+          <Link to='/subscribe'>
+            <button className='px-4 py-2 rounded cursor-pointer text-white'>
+              Subscribe
             </button>
           </Link>
           
