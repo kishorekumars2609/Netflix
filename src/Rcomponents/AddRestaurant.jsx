@@ -24,9 +24,8 @@ const AddRestaurant = () => {
   };
 
   return (
-    // style={{position : "relative" , top :100}}
     
-    <div className=" py-16" >
+    <div className=" " >
       <h1 className='text-white text-center font-semibold'>Please enter the movie name and reviews</h1>
       <form action="">
         <div className="grid grid-cols-3 gap-4">

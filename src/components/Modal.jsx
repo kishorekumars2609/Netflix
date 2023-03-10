@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { CiYoutube } from "react-icons/ci";
-import { BsPlayCircle } from "react-icons/bs";
 import { UserAuth } from "../context/AuthContext";
-
 import MovieList from "./MovieList";
 
 
@@ -12,11 +10,7 @@ export default function Modal( movie_id, movie_link) {
    //const similar=movie_id;
 
    const[showSuggest,setShowSuggest]=React.useState(false)
-
    
-
-   
- 
     function userin(){
       if(user?.email){
         setShowModal(true)
@@ -44,7 +38,7 @@ export default function Modal( movie_id, movie_link) {
         <>
           <div className=" backdrop-invert-0 bg-white/70    justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
             
-            <div className=" modal-start name0 relative h-[400px] w-auto my-6 mx-auto max-w-3xl justify-center items-center ">
+            <div className=" modal-start name0 relative h-[400px] w-full my-6 mx-auto max-w-3xl justify-center items-center ">
               <div className=" name1 h-full w-[500px] border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-zinc-400 outline-none focus:outline-none">
                
                 <div className="relative h-[250px] p-2 flex-auto">

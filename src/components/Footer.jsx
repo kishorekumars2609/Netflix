@@ -12,8 +12,8 @@ import { IoMdMailUnread } from "react-icons/io";
 function Footer() {
   return (
     <div className="main-footer  ">
-      <div className="container   ">
-        <div className="grid grid-cols-3 gap-4 py-2 bg-zinc-800 ">
+      <div className="container   bg-zinc-800">
+        <div className="grid grid-cols-3  py-2 w-full">
           {/* Column1 */}
           <div className="col text-white flex flex-col justify-center items-center text-center ">
             <h4 className="text-white">Reach Us</h4>
