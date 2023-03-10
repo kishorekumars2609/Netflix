@@ -18,8 +18,8 @@ const Navbar = () => {
 
   return (
     <div className='flex items-center justify-between p-4 z-[100] w-full absolute no-underline	'>
-      <Link to='/'>
-        <h1  className='text-red-600 text-4xl font-bold cursor-pointer no-underline	 '>
+      <Link to='/' className='text-decoration-none'>
+        <h1  className='text-red-600 text-4xl font-bold cursor-pointer no-underline	 ' >
           WATCHOO
         </h1>
       </Link>
@@ -49,19 +49,20 @@ const Navbar = () => {
         </div>
       ) : (
         <div>
+          <Link to='/subscribe'>
+            <button className='px-4  mr-2 rounded cursor-pointer text-white'>
+              Subscribe
+            </button>
+          </Link>
           <Link to='/login'>
-            <button className='text-white pr-4'>Sign In</button>
+            <button className='text-white text-center mr-2 ml-1 pr-4'>Sign In</button>
           </Link>
           <Link to='/signup'>
             <button className='bg-red-600 px-6 py-2 rounded cursor-pointer text-white'>
               Sign Up
             </button>
           </Link>
-          <Link to='/subscribe'>
-            <button className='px-4 py-2 rounded cursor-pointer text-white'>
-              Subscribe
-            </button>
-          </Link>
+          
           
         </div>
       )}

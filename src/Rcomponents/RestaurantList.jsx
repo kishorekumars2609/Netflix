@@ -57,43 +57,41 @@ const RestaurantList = (props) => {
   };
 
   return (
-    <div className="list-group relative  " >
-      <table className="table table-hover table-dark text-white w-full">
-        <thead>
-          <tr className=" ">
-            <th scope="col">Movie Name</th>
-            <th scope="col">Movie No</th>
-            <th scope="col">Difficulty</th>
-            <th scope="col">Ratings</th>
-            <th scope="col">Edit</th>
-            <th scope="col">Delete</th>
+    <div className=" relative  " >
+      <table className="table-auto w-full">
+        <thead >
+          <tr className="bg-gray-800 text-gray-300  text-center">
+            <th scope="px-4 py-2">Movie Name</th>
+            <th scope="px-4 py-2">Movie No</th>
+            <th scope="px-4 py-2">Difficulty</th>
+            <th scope="px-4 py-2">Ratings</th>
+            <th scope="px-4 py-2">Edit</th>
+            <th scope="px-4 py-2">Delete</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className=" text-center">
           {restaurants &&
             restaurants.map((restaurant) => {
               return (
-                <tr
+                <tr  className="bg-gray-700 cursor-pointer"
                   onClick={() => handleRestaurantSelect(restaurant.id)}
                   key={restaurant.id}
                 >
-                  <td>{restaurant.name}</td>
-                  <td>{restaurant.location}</td>
-                  <td>{"✮".repeat(restaurant.price_range)}</td>
-                  <td>{renderRating(restaurant)}</td>
-                  <td>
+                  <td className="px-4 py-2 text-gray-300">{restaurant.name}</td>
+                  <td className="px-4 py-2 text-gray-300">{restaurant.location}</td>
+                  <td className="px-4 py-2 text-gray-300">{"✮".repeat(restaurant.price_range)}</td>
+                  <td className="px-4 py-2 text-gray-300">{renderRating(restaurant)}</td>
+                  <td className="px-4 py-2">
                     <button
                       // onClick={(e) => handleUpdate(e, restaurant.id)}
-                      className="btn btn-warning"
-                    >
+                      className="bg-yellow-500 hover:bg-yellow-400 text-white font-bold py-2 px-4 rounded"                    >
                       Update
                     </button>
                   </td>
-                  <td>
+                  <td className="px-4 py-2">
                     <button
                       onClick={(e) => handleDelete(e, restaurant.id)}
-                      className="btn btn-danger"
-                    >
+                      className="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 rounded"                    >
                       Delete
                     </button>
                   </td>
@@ -107,3 +105,53 @@ const RestaurantList = (props) => {
 };
 
 export default RestaurantList;
+
+
+// return (
+//   <div className="list-group relative  " >
+//     <table className="table table-hover table-dark text-white w-full">
+//       <thead>
+//         <tr className=" ">
+//           <th scope="col">Movie Name</th>
+//           <th scope="col">Movie No</th>
+//           <th scope="col">Difficulty</th>
+//           <th scope="col">Ratings</th>
+//           <th scope="col">Edit</th>
+//           <th scope="col">Delete</th>
+//         </tr>
+//       </thead>
+//       <tbody>
+//         {restaurants &&
+//           restaurants.map((restaurant) => {
+//             return (
+//               <tr
+//                 onClick={() => handleRestaurantSelect(restaurant.id)}
+//                 key={restaurant.id}
+//               >
+//                 <td>{restaurant.name}</td>
+//                 <td>{restaurant.location}</td>
+//                 <td>{"✮".repeat(restaurant.price_range)}</td>
+//                 <td>{renderRating(restaurant)}</td>
+//                 <td>
+//                   <button
+//                     // onClick={(e) => handleUpdate(e, restaurant.id)}
+//                     className="btn btn-warning"
+//                   >
+//                     Update
+//                   </button>
+//                 </td>
+//                 <td>
+//                   <button
+//                     onClick={(e) => handleDelete(e, restaurant.id)}
+//                     className="btn btn-danger"
+//                   >
+//                     Delete
+//                   </button>
+//                 </td>
+//               </tr>
+//             );
+//           })}
+//       </tbody>
+//     </table>
+//   </div>
+// );

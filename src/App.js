@@ -29,7 +29,7 @@ function App() {
                 <Account />
               </ProtectedRoute>
             }
-          />
+          /> 
           <Route path="/reviews" element={<Reviews/>}/>
           <Route
               
