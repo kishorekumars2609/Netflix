@@ -7,7 +7,7 @@ export const RestaurantsContextProvider = (props) => {
   const [selectedRestaurant, setSelectedRestaurant] = useState(null);
 
   const addRestaurants = (restaurant) => {
-    setRestaurants([restaurant,...restaurants]);
+    setRestaurants([...restaurants,restaurant]);
   };
   return (
     <RestaurantsContext.Provider

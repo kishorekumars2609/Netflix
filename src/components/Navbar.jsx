@@ -167,7 +167,7 @@ export default function Navbar({ fixed }) {
           console.log(error);
         }
       };
-
+//  console.log(user.email)
   return (
     <>
       <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-zinc-800">
@@ -224,19 +224,18 @@ export default function Navbar({ fixed }) {
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
               <li className="nav-item">
               <Link to='/subscribe'>
-                  <button className=" text-lg leading-lg pr-3 text-white opacity-75"></button><span className="ml-2 text-white">Subscribe</span>
+                  <button className=" text-lg leading-lg pr-3  text-white opacity-75"><span className="ml-2 text-white">Subscribe</span></button>
                 </Link>
               </li>
               <li className="nav-item">
               <Link to='/login'>
-                  <button className=" text-lg leading-lg pr3 text-white opacity-75"></button><span className="ml-2 text-white">Signin</span>
+                  <button className=" text-lg leading-lg pr-3 text-white opacity-75"><span className="ml-2 text-white">SignIn</span></button>
                 </Link>
               </li>
               <li className="nav-item">
-                
               <Link to='/signup'>
-                  <button className=" text-lg leading-lg text-white pr-3 ml-2"></button><span className="ml-2 text-white">SignUp</span>
-                </Link>                
+                  <button className=" text-lg leading-lg pr-3 text-white opacity-75"><span className="ml-2 text-white">SignUp</span></button>
+                </Link>
               </li>
             </ul>
           </div>

@@ -3,10 +3,13 @@ import RestaurantFinder from "../apis/RestaurantFinder";
 import { RestaurantsContext } from "../context/RestaurantsContext";
 import StarRating from "./StarRating";
 import { Link,useNavigate } from "react-router-dom";
+import { UserAuth } from '../context/AuthContext';
+
 
 const RestaurantList = (props) => {
   const { restaurants, setRestaurants } = useContext(RestaurantsContext);
-  
+  const { user } = UserAuth();
+
   let history = useNavigate();
   useEffect(() => {
     const fetchData = async () => {
@@ -57,13 +60,13 @@ const RestaurantList = (props) => {
   };
 
   return (
-    <div className=" relative  " >
+    <div className=" relative mt-3   " >
       <table className="table-auto w-full">
-        <thead >
+        <thead className="py-3" >
           <tr className="bg-gray-800 text-gray-300  text-center">
             <th scope="px-4 py-2">Movie Name</th>
-            <th scope="px-4 py-2">Movie No</th>
-            <th scope="px-4 py-2">Difficulty</th>
+            {/* <th scope="px-4 py-2">Movie No</th> */}
+            <th scope="px-4 py-2">✮</th>
             <th scope="px-4 py-2">Ratings</th>
             <th scope="px-4 py-2">Edit</th>
             <th scope="px-4 py-2">Delete</th>
@@ -72,13 +75,14 @@ const RestaurantList = (props) => {
         <tbody className=" text-center">
           {restaurants &&
             restaurants.map((restaurant) => {
+              // if(user.email==="kk26092002@gmail.com"){
               return (
                 <tr  className="bg-gray-700 cursor-pointer"
                   onClick={() => handleRestaurantSelect(restaurant.id)}
                   key={restaurant.id}
                 >
                   <td className="px-4 py-2 text-gray-300">{restaurant.name}</td>
-                  <td className="px-4 py-2 text-gray-300">{restaurant.location}</td>
+                  {/* <td className="px-4 py-2 text-gray-300">{restaurant.location}</td> */}
                   <td className="px-4 py-2 text-gray-300">{"✮".repeat(restaurant.price_range)}</td>
                   <td className="px-4 py-2 text-gray-300">{renderRating(restaurant)}</td>
                   <td className="px-4 py-2">
@@ -97,6 +101,7 @@ const RestaurantList = (props) => {
                   </td>
                 </tr>
               );
+              // }
             })}
         </tbody>
       </table>

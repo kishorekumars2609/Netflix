@@ -11,7 +11,7 @@ const Reviews = ({ reviews }) => {
             className="card text-white bg-gray-500 mb-3 mr-4"
             style={{ maxWidth: "30%" }}
           >
-            <div className="card-header d-flex justify-content-between">
+            <div className="card-header d-flex justify-content-between flex flex-col">
               <span>{review.name}</span>
               <span>
                 <StarRating rating={review.rating} />

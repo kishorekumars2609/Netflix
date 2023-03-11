@@ -25,20 +25,20 @@ const AddRestaurant = () => {
 
   return (
     
-    <div className=" " >
-      <h1 className='text-white text-center font-semibold'>Please enter the movie name and reviews</h1>
+    <div className="py-3 " >
+      <h1 className='text-white text-center pb-3 font-semibold'>Please enter the movie name and reviews</h1>
       <form action="">
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 gap-4">
           <div className="col">
             <input
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               type="text"
-              className="border rounded-md py-2 px-3 w-full"
+              className="border rounded-md py-2 px-3  w-full"
               placeholder="Movie Name"
             />
           </div>
-          <div className="col">
+          {/* <div className="col">
             <input
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
@@ -46,7 +46,7 @@ const AddRestaurant = () => {
               type="text"
               placeholder="Movie No"
             />
-          </div>
+          </div> */}
 
           
           <div className="col">

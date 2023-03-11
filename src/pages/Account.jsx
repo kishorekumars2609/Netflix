@@ -1,10 +1,18 @@
 import React from 'react'
+import { UserAuth } from '../context/AuthContext';
 import SavedShows from '../components/SavedShows'
 
 
 
 
 const Account = () => {
+
+
+  const { user } = UserAuth();
+  console.log(user.email)
+
+
+
   return (
     <>
     <div className='w-full text-white'>
@@ -15,7 +23,7 @@ const Account = () => {
       />
       <div className='bg-black/60 fixed top-15 left-0 w-full h-[550px]'></div>
       <div className='absolute top-[40%] p-4 md:p-8'>
-        <h1 className='text-3xl md:text-5xl font-bold'>My Shows</h1>
+        <p className='text-xl md:text-2xl font-bold'>Welcome, {user?.email}</p>
       </div>
     </div>
     <SavedShows />
