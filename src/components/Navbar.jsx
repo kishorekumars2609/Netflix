@@ -211,6 +211,7 @@ export default function Navbar({ fixed }) {
               <button onClick={handleLogout} className=" text-lg leading-lg bg-red-600  rounded pr-3 ml-2 text-white "><span className="ml-2 text-white">Logout</span></button>
                 
               </li>
+              
             </ul>
           </div>
           ):(
