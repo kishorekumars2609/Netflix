@@ -29,14 +29,16 @@ function App() {
                 <Account />
               </ProtectedRoute>
             }
-          /> 
+          />
+          <ProtectedRoute>
           <Route path="/reviews" element={<Reviews/>}/>
           <Route
               
               path="/reviews/:id"
               element={<MovieReview/>}
-            />
+              />
           <Route path="/subscribe" element={<Subscription/>}/>
+              </ProtectedRoute> 
         </Routes>
       </AuthContextProvider>
       </RestaurantsContextProvider>
