@@ -36,7 +36,7 @@ function App() {
               path="/reviews/:id"
               element={ <ProtectedRoute><MovieReview/></ProtectedRoute>}
             />
-          <Route path="/subscribe" element={ <ProtectedRoute><Subscription/></ProtectedRoute>}/>
+          <Route path="/subscribe" element={ <Subscription/>}/>
         </Routes>
       </AuthContextProvider>
       </RestaurantsContextProvider>
